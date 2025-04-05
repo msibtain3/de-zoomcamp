@@ -1,0 +1,12 @@
+## running multiple images as containers
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER:root
+      - POSTGRES_PASSWORD:root
+      - POSTGRES_DB:ny_taxi
+    volumes:
+      - ./postgres-db-volume:/var/lib/postgresql/data:rw
+    ports:
+      - "5432:5432"
